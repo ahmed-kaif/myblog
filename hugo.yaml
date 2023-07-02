@@ -8,13 +8,12 @@ params:
   DateFormat: "July 2, 2023"
   defaultTheme: dark
   disableThemeToggle: false
-
   ShowReadingTime: true
   ShowShareButton: true
   ShowNavLinks: true
   UseHugoToc: true
   comments: true
-  showtoc: false
+  showtoc: true
   # home-info mode
   homeInfoParams:
     Title: "Hi there \U0001F44B"
@@ -28,6 +27,15 @@ params:
       url: ""
     - name: "facebook"
       url: "https://facebook.com/kaif.ahmedkhan.7"
+    # Search
+  fuseOpts:
+        isCaseSensitive: false
+        shouldSort: true
+        location: 0
+        distance: 1000
+        threshold: 0.4
+        minMatchCharLength: 3
+        keys: ["title", "permalink", "summary", "content"]  
 
 menu:
   main:
@@ -46,3 +54,14 @@ menu:
     - identifier: posts
       name: Posts
       url: /posts/
+      weight: 40
+    - identifier: notes
+      name: Notes & Files
+      url: /notes/
+      weight: 35
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
