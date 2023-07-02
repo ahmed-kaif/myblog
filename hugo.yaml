@@ -43,3 +43,6 @@ menu:
       name: Search
       url: /search/
       weight: 30
+    - identifier: posts
+      name: Posts
+      url: /posts/
